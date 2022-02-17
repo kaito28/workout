@@ -1,0 +1,14 @@
+<div>
+  <p>ユーザーネーム：<%= @post_gym.user.name %></p>
+  <p>today's best photo：<%= attachment_image_tag @post_gym, :image, format: 'jpeg', size: "300x300" %></p>
+  <p>トレーニング場所：<%= @post_gym.workout_at %></p>
+  <p>トレーニングメニュー：<%= @post_gym.workout_menu %></p>
+  <p>説明：<%= @post_gym.aim %></p>
+  <p>投稿日時：<%= @post_gym.created_at.strftime('%Y/%m/%d') %></p>
+
+  <% if @post_gym.user == current_user %>
+  <%= link_to "削除", post_gym_path(@post_gym), method: :delete %>
+  <%= link_to "編集", edit_post_gym_path(@post_gym) %>
+  <% end %>
+
+</div>

@@ -1,10 +1,12 @@
 <% @post_gyms.each do |post_gym| %>
 <div>
-  <%= attachment_image_tag post_gym, :image %>
-  <p>投稿ユーザー画像：<%# image_tag('sample-author1.jpg') %></p>
-  <p>トレーニング場所：<%= post_gym.workout_at %></p>
-  <p>説明：<%= post_gym.workout_menu %></p>
-  <p>説明：<%= post_gym.aim %></p>
+   <%= link_to post_gym_path(post_gym.id) do %>
   <p>ユーザーネーム：<%= post_gym.user.name %></p>
+  <% end %>
+  <p>today's best photo：<%= attachment_image_tag post_gym, :image, format: 'jpeg', size: "100x100" %></p>
+  <p>トレーニング場所：<%= post_gym.workout_at %></p>
+  <p>トレーニングメニュー：<%= post_gym.workout_menu %></p>
+  <p>説明：<%= post_gym.aim %></p>
+
 </div>
 <% end %>
