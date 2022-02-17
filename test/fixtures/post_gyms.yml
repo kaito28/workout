@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  workout_name: MyText
+  image_id: MyString
+  workout_menu: MyText
+  user_id: 1
+
+two:
+  workout_name: MyText
+  image_id: MyString
+  workout_menu: MyText
+  user_id: 1
