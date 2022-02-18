@@ -18,6 +18,7 @@ class PostGymsController < ApplicationController
 
   def show
   @post_gym = PostGym.find(params[:id])
+  @comment = Comment.new
   end
 
   def edit
