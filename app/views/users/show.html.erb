@@ -1,0 +1,19 @@
+<div>
+  <h3><%= @user.name %></h3>
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg' %>
+
+  <p>年齢：<%= @user.old %></p>
+  <p>身長：<%= @user.height %></p>
+  <p>体重：<%= @user.body_weight %></p>
+  <p>トレーニング歴：<%= @user.experience %></p>
+
+</div>
+
+ <% if @user.id == current_user.id %>
+    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+  <% end %>
+
+
+<%= paginate @post_gyms %>
+
+
