@@ -13,7 +13,7 @@ class PostGymsController < ApplicationController
   end
 
   def index
-  @post_gyms = PostGym.all
+  @post_gyms = PostGym.page(params[:page]).reverse_order
   end
 
   def show
@@ -21,15 +21,17 @@ class PostGymsController < ApplicationController
   @comment = Comment.new
   end
 
-  def edit
-  @post_gym = PostGym.find(params[:id])
-  end
 
   def update
   post_gym = PostGym.find(params[:id])
   post_gym.update(post_gym_params)
   redirect_to post_gyms_path(post_gym)
   end
+
+  def edit
+  @post_gym = PostGym.find(params[:id])
+  end
+
 
   def destroy
   @post_gym = PostGym.find(params[:id])
