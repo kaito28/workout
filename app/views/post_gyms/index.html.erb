@@ -1,16 +1,42 @@
+<div class="card-list-container py-5">
 <% @post_gyms.each do |post_gym| %>
-<div>
+
+<div class="card w-50 mx-auto mt-4 shadow-lg">
    <%= link_to post_gym_path(post_gym.id) do %>
-  <p>ユーザーネーム：<%= post_gym.user.name %></p>
+   <p>Name：<%= post_gym.user.name %></p>
   <% end %>
-  <p>today's best photo：<%= attachment_image_tag post_gym, :image, format: 'jpeg', size: "500x500" %></p>
-  <p>トレーニング場所：<%= post_gym.workout_at %></p>
-  <p>トレーニングメニュー：<%= post_gym.workout_menu %></p>
-  <p>説明：<%= post_gym.aim %></p>
 
- <p><%= link_to "#{post_gym.comments.count} コメント", post_gym_path(post_gym.id) %></p>
 
+ <div class="card-body">
+    <div class="row">
+      <div class="col-2">
+        <%= attachment_image_tag post_gym.user, :profile_image, :fill, 60, 60,  class:"mt-3 rounded-circle"; %>
+      </div>
+         </div>
+            </div>
+
+
+
+<strong>today's best photo</strong>
+  <p class="border border"><%= attachment_image_tag post_gym, :image, class:"card-img-top"; %></p>
+
+
+
+
+ <div class="col-10">
+　 <p class="card-title">
+  　<p class="card-text">トレーニング場所：<%= post_gym.workout_at %></p>
+  　<p class="card-text">トレーニングメニュー：<br><%= safe_join(post_gym.workout_menu.split("\n"),tag(:br)) %></p>
+　  <p class="card-text">説明：<%= safe_join(post_gym.aim.split("\n"),tag(:br)) %></p>
+　  <span><i class="fas fa-user"></i> By <%= post_gym.user.name %> ｜ </span>
+ <span><%= link_to "#{post_gym.comments.count} コメント", post_gym_path(post_gym.id), class:"text-dark" %></span>
+
+ 　　　　</div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%= paginate @post_gyms %>
 </div>
-<% end %>
-<%= paginate @post_gyms %>
+</div>
 
