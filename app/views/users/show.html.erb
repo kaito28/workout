@@ -1,19 +1,26 @@
-<div>
-  <h3><%= @user.name %></h3>
-  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg' %>
+<div class="container mt-4">
+<div calss="col-12">
+<h3>My page</h3>
+</div>
+</div>
 
-  <p>年齢：<%= @user.old %></p>
-  <p>身長：<%= @user.height %></p>
-  <p>体重：<%= @user.body_weight %></p>
-  <p>トレーニング歴：<%= @user.experience %></p>
+<div class="container border bg-light mt-4">
+<div class="col-12">
+<div>
+
+  <p class="text-center mt-4"><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class:"mt-3 border rounded-circle"; %></p>
+
+  <h3 class="text-center mt-4"><%= @user.name %></h3>
+  <p class="text-center mt-4">年齢：<%= @user.old %></p>
+  <p class="text-center mt-4">身長：<%= @user.height %></p>
+  <p class="text-center mt-4">体重：<%= @user.body_weight %></p>
+  <p class="text-center mt-4">トレーニング歴：<%= @user.experience %></p>
 
 </div>
 
  <% if @user.id == current_user.id %>
-    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+   <p class="text-right"><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
   <% end %>
 
-
-<%= paginate @post_gyms %>
-
-
+</div>
+</div>
