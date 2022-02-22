@@ -35,11 +35,11 @@
               <%= link_to 'My page', user_path(current_user.id), class: 'nav-link text-dark' %>
             </li>
             <% else %>
-            <li class="nav-item">
-              <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-dark' %>
+            <li class="nav-item bg-dark">
+              <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-white' %>
             </li>
-            <li class="nav-item">
-              <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-dark' %>
+            <li class="nav-item bg-dark ml-3">
+              <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-white' %>
             </li>
             <% end %>
             </ul>
