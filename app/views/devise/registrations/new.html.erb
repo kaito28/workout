@@ -1,62 +1,29 @@
-
-<section class="inner">
-  <h2 class="section-ttl">新規会員登録</h2>
-
+<div class="container mt-4">
+<div calss="col-12">
+<h3>新規登録</h3>
+</div>
+</div>
   <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-    <table class="user_info user_form">
-      <thead>
-        <th></th>
-        <th></th>
-        <th></th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>名前</td>
-          <td><%= f.text_field :name, autofocus: true, :placeholder =>"京都 祇園" %></td>
-        </tr>
 
-        <tr>
-          <td>フリガナ</td>
-          <td><%= f.text_field :name_kana, :placeholder =>"キョウト ギオン" %></td>
-        </tr>
-        <tr>
 
-          <td><%= f.label :old, "年齢" %></td>
-          <td colspan="2"><%= f.text_field :old, :placeholder =>"23"%>歳</td>
-        </tr>
-        <tr>
-          <td><%= f.label :height, "身長" %></td>
-          <td colspan="2"><%= f.text_field :height, :placeholder =>"175"%>cm</td>
-        </tr>
-        <tr>
-          <td><%= f.label :body_weight, "体重" %></td>
-          <td colspan="2"><%= f.text_field :body_weight, :placeholder =>"70"%>kg</td>
-        </tr>
-        <tr>
-          <td><%= f.label :experience, "トレーニング歴" %></td>
-          <td colspan="2"><%= f.text_field :experience, :placeholder =>"1年以上"%></td>
-        </tr>
+<div class="container border bg-light mt-4 mb-4">
+<div class="col-12">
 
-         <tr>
-          <td><%= f.label :email, "メールアドレス" %></td>
-          <td colspan="2"><%= f.email_field :email, autocomplete: "email" %></td>
-        </tr>
-
-        <tr>
-          <td><%= f.label :password, "パスワード(#{@minimum_password_length}文字以上)" %></td>
-          <td colspan="2"><%= f.password_field :password, autocomplete: "new-password" %></td>
-        </tr>
-        <tr>
-          <td><%= f.label :password_confirmation, "パスワード(確認用)" %></td>
-          <td colspan="2"><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td colspan="2"><%= f.submit "新規登録", class: "btn btn-success" %></td>
-        </tr>
-      </tbody>
-    </table>
+<div>
+  <p class="text-center mt-4"><%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %></p>
+  <p class="text-center mt-3">名前: <%= f.text_field :name, autofocus: true, placeholder:"名前"%></p>
+  <p class="text-center mt-4">年齢: <%= f.text_field :old, autofocus: true, placeholder:"年齢"%></p>
+  <p class="text-center mt-4">身長: <%= f.text_field :height, autofocus: true, placeholder:"身長(cm)"%></p>
+  <p class="text-center mt-4">体重: <%= f.text_field :body_weight, autofocus: true, placeholder:"体重(kg)"%></p>
+  <p class="text-center mt-4 mr-4 ">トレーニング歴: <%= f.text_field :experience, autofocus: true, placeholder:"1年以上", class:"mr-5"%></p>
+  <p class="text-center mt-4 mr-4">メールアドレス: <%= f.email_field :email, autocomplete: "email",class:"mr-5" %></p>
+  <p class="text-center mt-4 mr-4">パスワード: <%= f.password_field :password, autocomplete: "new-password",class:"mr-3" %></p>
+  <p class="text-center mt-4 mr-5">パスワード(確認用) :<%= f.password_field :password_confirmation, autocomplete: "new-password",class:"mr-5" %></p>
+  <p class="text-center mt-4"><%= f.submit "新規登録", class: "btn btn-success" %></p>
   <% end %>
+</div>
+</div>
+
 
   <h2 class="section-ttl">既に登録済みの方</h2>
   <p><%= link_to "こちら", new_user_session_path, class: "underline" %>からログインしてください。</p>
