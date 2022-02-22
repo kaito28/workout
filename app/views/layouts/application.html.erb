@@ -23,15 +23,15 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
-            <li class="nav-item  bg-info">
+            <li class="nav-item  bg-info ml-3">
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
             </li>
 
-            <li class="nav-item  bg-primary">
+            <li class="nav-item  bg-primary ml-3">
               <%= link_to 'Post', new_post_gym_path, class: 'nav-link text-dark' %>
             </li>
 
-            <li class="nav-item bg-success">
+            <li class="nav-item bg-success ml-3">
               <%= link_to 'My page', user_path(current_user.id), class: 'nav-link text-dark' %>
             </li>
             <% else %>
