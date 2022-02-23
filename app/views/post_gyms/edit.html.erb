@@ -1,13 +1,48 @@
-<h1>編集画面</h1>
-<!-- form_with部分 -->
-<%= form_with model: @post_gym, local: true do |f| %>
- <h4>today's best photo</h4>
-  <%= f.attachment_field :image %>
-  <h4>トレーニング場所</h4>
-  <%= f.text_field :workout_at %>
-  <h4>トレーニングメニュー</h4>
-  <%= f.text_area :workout_menu %>
-  <h4>トレーニング説明</h4>
-  <%= f.text_area :aim %>
-  <%= f.submit '保存' %>
-<% end %>
+
+<div class="container mt-4">
+<div calss="col-12">
+<h3>編集画面</h3>
+</div>
+</div>
+
+
+
+<div class= "container bg-light mt-3 mb-3">
+  <div class= "col-12">
+		<table>
+			<%= form_with model: @post_gym, local:true do |f| %>
+			<thead>
+				<tr>
+				<th class="col-lg-2 text-center border">today's best photo</th>
+				   <td class="col-lg-2"><%= f.attachment_field :image %></td>
+                </tr>
+
+	            <tr>
+				    <th class="col-lg-2 text-center border ml-2">トレーニング場所</th>
+				  	<td class="col-lg-2"><%= f.text_field :workout_at %></td>
+                </tr>
+
+                 <tr>
+					 <th class="col-lg-4 text-center border">トレーニングメニュー</th>
+					 <td class="col-lg-8"><%= f.text_area :workout_menu, :size=>"60x10" %></td>
+			    </tr>
+
+
+					  <tr>
+				       <th class="col-lg-4 text-center border">トレーニング説明</th>
+				   	   <td class="col-lg-8"> <%= f.text_area :aim, :size=>"60x10" %> </td>
+				   	</tr>
+
+				  <tr>
+				  <th></th>
+				  <div class="text-center">
+					<td><%= f.submit '変更を保存', class: "btn btn-primary ml-5" %></td>
+					</div>
+				<% end %>
+				</tr>
+			</thead>
+  </div>
+</div>
+
+			</tbody>
+	　</table>

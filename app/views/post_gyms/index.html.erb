@@ -6,9 +6,9 @@
   <div class="card-body">
   <div class="row">
   <div class="col-12">
-  <%= attachment_image_tag post_gym.user, :profile_image, :fill, 60, 60,  class:"mt-3 rounded-circle"; %>
+  <%= attachment_image_tag post_gym.user, :profile_image, :fill, 100, 100,  class:"mt-3 rounded-circle"; %>
    <%= link_to post_gym_path(post_gym.id) do %>
-  <p class="text-left mt-3"><strong><%= post_gym.user.name %></strong></p>
+  <p class="text-left mt-3 ml-4"><strong><%= post_gym.user.name %></strong></p>
   <% end %>
   </div>
   </div>
