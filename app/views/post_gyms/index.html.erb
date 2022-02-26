@@ -1,0 +1,10 @@
+<% @post_gyms.each do |post_gym| %>
+<div>
+  <%= attachment_image_tag post_gym, :image %>
+  <p>投稿ユーザー画像：<%# image_tag('sample-author1.jpg') %></p>
+  <p>トレーニング場所：<%= post_gym.workout_at %></p>
+  <p>説明：<%= post_gym.workout_menu %></p>
+  <p>説明：<%= post_gym.aim %></p>
+  <p>ユーザーネーム：<%= post_gym.user.name %></p>
+</div>
+<% end %>

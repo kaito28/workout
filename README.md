@@ -1,24 +1,37 @@
-# README
+# workout
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
 
-Things you may want to cover:
+筋トレに興味があるユーザーーのトレーニングの紹介ができできるサイト
 
-* Ruby version
+### サイトテーマ
 
-* System dependencies
+トレーニング内容のシェア
 
-* Configuration
+### テーマを選んだ理由
 
-* Database creation
+自分自身筋トレが好きでトレーニングをしています。
+他のユーザーのがどのようなトレーニングメニュー組んで筋トレをしているのか知りたくなり、トレーニングメニューを紹介しあえる
+場を想定してこのテーマを選びました。
 
-* Database initialization
+### ターゲットユーザ
 
-* How to run the test suite
+トレーニングをしていて、トレーニング内容を共有したい人
 
-* Services (job queues, cache servers, search engines, etc.)
+### 主な利用シーン
 
-* Deployment instructions
+自分のトレーニングを見てほしい、又はどんなトレーニングをしているのか気になる人。
 
-* ...
+## チャレンジ要素一覧
+
+https://docs.google.com/spreadsheets/d/11r34J2SEnWDnbwwoslbqKHudDC58zeROr7Jmtw4CVis/edit#gid=0
+
+## 開発環境
+
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JS ライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材

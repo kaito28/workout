@@ -1,0 +1,12 @@
+<div>トレーニング投稿</div>
+<%= form_with model: @post_gym, local:true do |f| %>
+  <h4>画像</h4>
+  <%# f.attachment_field :image %>
+  <h4>トレーニング場所</h4>
+  <%= f.text_field :workout_at %>
+  <h4>トレーニングメニュー</h4>
+  <%= f.text_area :workout_menu %>
+  <h4>トレーニング説明</h4>
+  <%= f.text_area :aim %>
+  <%= f.submit '投稿' %>
+<% end %>
