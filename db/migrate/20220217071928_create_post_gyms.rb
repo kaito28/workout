@@ -1,4 +1,4 @@
-class CreatePostGyms < ActiveRecord::Migration[6.1]
+class CreatePostGyms < ActiveRecord::Migration[5.2]
   def change
     create_table :post_gyms do |t|
       t.text :workout_at #トレーニング場所
